@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<process xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="simplemodel" name="SimpleModel" xmlns="http://www.atomicplatform.com/Process">
+  <events />
+  <tasks />
+  <conditions>
+    <condition id="_done" name="_done">
+      <value id="process_current_state" xmlns="" />
+      <expectedValue xmlns="">Running</expectedValue>
+      <function id="_done_func" xmlns="" />
+      <conditionType xmlns="">ValueCondition</conditionType>
+    </condition>
+  </conditions>
+  <values>
+    <value id="process_current_state" name="Process Current State">
+      <initialValue xmlns="">Ready</initialValue>
+      <task id="simplemodel" xmlns="" />
+      <valueType xmlns="">TaskStateView</valueType>
+    </value>
+  </values>
+  <functions>
+    <function id="_done_func" name="_done_func">
+      <assembly xmlns="">Atomic.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+      <module xmlns="">ValueCondition</module>
+      <method xmlns="">EqualsFunction</method>
+    </function>
+  </functions>
+</process>

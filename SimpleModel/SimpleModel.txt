@@ -1,0 +1,3 @@
+define process with name "SimpleModel" 
+end 
+    when task "simplemodel" is "Running"

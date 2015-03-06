@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<process xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="hello_world" name="Hello World" xmlns="http://www.atomicplatform.com/Process">
+  <events />
+  <tasks>
+    <task id="display_greeting" name="Display Greeting">
+      <startOnCondition id="is_process_running" xmlns="" />
+      <stopOnCondition id="condition65248697" xmlns="" />
+      <runScript xmlns="">print "Hello World!"</runScript>
+    </task>
+  </tasks>
+  <conditions>
+    <condition id="_done" name="_done">
+      <value id="task_current_state" xmlns="" />
+      <expectedValue xmlns="">Done</expectedValue>
+      <function id="is_process_running_func" xmlns="" />
+      <conditionType xmlns="">ValueCondition</conditionType>
+    </condition>
+    <condition id="is_process_running" name="Is Process Running">
+      <value id="process_current_state" xmlns="" />
+      <expectedValue xmlns="">Running</expectedValue>
+      <function id="is_process_running_func" xmlns="" />
+      <conditionType xmlns="">ValueCondition</conditionType>
+    </condition>
+    <condition id="condition65248697" name="condition65248697">
+      <task id="display_greeting" xmlns="" />
+      <state xmlns="">RunComplete</state>
+      <conditionType xmlns="">TaskCondition</conditionType>
+    </condition>
+  </conditions>
+  <values>
+    <value id="task_current_state" name="Task Current State">
+      <initialValue xmlns="">Ready</initialValue>
+      <task id="display_greeting" xmlns="" />
+      <valueType xmlns="">TaskStateView</valueType>
+    </value>
+    <value id="process_current_state" name="Process Current State">
+      <initialValue xmlns="">Ready</initialValue>
+      <task id="hello_world" xmlns="" />
+      <valueType xmlns="">TaskStateView</valueType>
+    </value>
+  </values>
+  <functions>
+    <function id="is_process_running_func" name="Is Process Running_func">
+      <assembly xmlns="">Atomic.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</assembly>
+      <module xmlns="">ValueCondition</module>
+      <method xmlns="">EqualsFunction</method>
+    </function>
+  </functions>
+</process>

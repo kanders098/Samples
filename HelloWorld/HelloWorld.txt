@@ -1,0 +1,6 @@
+define process with name "Hello World" 
+add task with name "Display Greeting"
+	start when task "hello_world" is "Running"
+    print "Hello World!"
+end 
+    when task "display_greeting" is "Done"
